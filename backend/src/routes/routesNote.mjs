@@ -1,5 +1,4 @@
-import { createNote,deleteNote,updateNote,findAllNotes,findByPkNote } from "../service/serviceNotes.mjs";
-import router from "./index.mjs";
+import { createNote,deleteNote,updateNote,findAllNotes,findByPkNote,findAllNote } from "../service/serviceNotes.mjs";
 import { auth } from "../auth/auth.mjs";
 
 export default (router)=>{
@@ -9,4 +8,5 @@ export default (router)=>{
     router.put('/api/updateNote/:id',auth,updateNote)
     router.get('/api/notes',auth,findAllNotes)
     router.get('/api/notes/:id',auth,findByPkNote)
+    router.get('/api/note/:id',auth,findAllNote)
 }

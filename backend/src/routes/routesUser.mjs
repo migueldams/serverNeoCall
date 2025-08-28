@@ -1,4 +1,4 @@
-import router from "./index.mjs";
+
 import { createUser } from "../service/ServiceUser.mjs";
 import { deleteUser } from "../service/ServiceUser.mjs";
 import { updateUser } from "../service/ServiceUser.mjs";

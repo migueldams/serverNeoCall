@@ -5,7 +5,7 @@ import { mockStocks } from "../mockdata/mockStock.mjs";
 import { mockNotes } from "../mockdata/mockNotes.mjs";
 import { mockCandidates } from "../mockdata/mockCandidate.mjs";
 import { User } from '../routes/index.mjs'
-import { Stock, Note, Candidate } from "../routes/index.mjs";
+import { Stock, Note, Candidate, TimeEntry } from "../routes/index.mjs";
 import bcrypt, { hash } from 'bcrypt'
 
 //⚙ synchronisation de la db
@@ -80,12 +80,12 @@ export default () => {
     })
     mockCandidates.map(data => {
       Candidate.create({
-        firstName:data.firstName,
+        firstName: data.firstName,
         lastName: data.lastName,
-        email:data.email,
+        email: data.email,
         phone: data.phone,
         position: data.position,
-        status:data.status,
+        status: data.status,
         resume: data.resume,
         experience: data.experience,
         skills: data.skills,
@@ -97,9 +97,15 @@ export default () => {
 
 
 
+
+
+
+
     console.log('base de donnée synchronisée')
   })
 
+
+  
   return sequelize
 }
 

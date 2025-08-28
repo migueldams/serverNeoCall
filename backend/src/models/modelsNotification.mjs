@@ -5,6 +5,9 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
+    },userId:{
+      type: DataTypes.INTEGER,
+      foreignKey: true,
     },
     type: {
       type: DataTypes.ENUM('info', 'success', 'warning', 'error'),

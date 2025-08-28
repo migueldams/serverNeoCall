@@ -39,7 +39,7 @@ export default (sequelize,DataTypes) => {
   });
   User.associate = models => {
     User.hasMany(models.Call, { foreignKey: 'user_id' , onDelete: 'CASCADE'});
-    User.hasMany(models.TimeEntry, { foreignKey: 'user_id' , onDelete: 'CASCADE'});
+    User.hasMany(models.TimeEntry, { foreignKey: 'userId', onDelete: 'CASCADE' });
     User.hasMany(models.Note, { foreignKey: 'user_id', onDelete: 'CASCADE' });
     User.hasMany(models.Notification, { foreignKey: 'user_id', onDelete: 'CASCADE' });
     User.hasMany(models.ComplianceDocument, { foreignKey: 'user_id', onDelete: 'CASCADE' });

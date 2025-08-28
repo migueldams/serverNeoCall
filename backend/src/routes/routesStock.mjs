@@ -1,4 +1,4 @@
-import router from "./index.mjs";
+
 import { createStock } from "../service/serviceStock.mjs";
 import { deleteStock } from "../service/serviceStock.mjs";
 import { updateStock } from "../service/serviceStock.mjs";
