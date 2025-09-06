@@ -6,10 +6,13 @@ export default (sequelize,DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
-    },userId:{
+    },userId: {
       type: DataTypes.INTEGER,
-      foreignKey: true,
-    },
+      allowNull: false,
+      references: {
+        model: "users",   // nom de la table parent
+        key: "id"
+      }},
     customerName: DataTypes.STRING,
     customerPhone: DataTypes.STRING,
     campaign: DataTypes.STRING,

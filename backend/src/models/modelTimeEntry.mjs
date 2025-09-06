@@ -7,9 +7,13 @@ export default (sequelize,DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
-    },userId:{
+    },userId: {
       type: DataTypes.INTEGER,
-    },
+      allowNull: false,
+      references: {
+        model: "users",   // nom de la table parent
+        key: "id"
+      }},
     
     checkIn: {type: DataTypes.DATE ,defaultValue: Sequelize.NOW},
     checkOut: DataTypes.DATE,

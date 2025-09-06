@@ -27,7 +27,7 @@ export default [{
   },
   {
     id: "c1",
-    agentId: "u2",
+    agentId: "2",
     customerName: "Mamadou Diallo",
     customerPhone: "+237690123456",
     campaign: "Campagne Aout",

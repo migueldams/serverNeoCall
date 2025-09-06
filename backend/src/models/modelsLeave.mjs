@@ -6,7 +6,13 @@ export default (sequelize,DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
-    },
+    },userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "users",   // nom de la table parent
+        key: "id"
+      }},
     type: {
       type: DataTypes.ENUM('conge_paye', 'conge_maladie', 'conge_maternite', 'conge_paternite', 'formation', 'personnel'),
       allowNull: false

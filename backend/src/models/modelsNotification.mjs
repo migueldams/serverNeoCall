@@ -5,13 +5,13 @@ export default (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
-    },userId:{
+    },userId: {
       type: DataTypes.INTEGER,
-      foreignKey: true,
-    },
-    type: {
-      type: DataTypes.ENUM('info', 'success', 'warning', 'error'),
-    },
+      allowNull: false,
+      references: {
+        model: "users",   // nom de la table parent
+        key: "id"
+      }},
     title: DataTypes.STRING,
     message: DataTypes.TEXT,
     isRead: {
