@@ -80,6 +80,126 @@ export const mockcUser =[ {
     department: "Direction",
     lastLogin: new Date().toISOString(),
     phoneNumber: "+237620000000"
+  },
+  {
+    id: 'U001',
+    email: 'marceline@agent.com',
+    firstName: 'Marie',
+    lastName: 'Dubois',
+    role: 'agent',
+    avatar: 'https://readdy.ai/api/search-image?query=professional%20female%20executive%20portrait&width=400&height=400&seq=user-1&orientation=squarish',
+    isActive: true,
+    lastLogin: new Date().toISOString(),
+    password: 'password123',
+    team: 1
+  },
+  {
+    id: 'U002',
+    email: 'paul@agent.com',
+    firstName: 'Paul',
+    lastName: 'Ngassa',
+    role: 'agent',
+    avatar: 'https://readdy.ai/api/search-image?query=young%20african%20male%20call%20center%20agent&width=400&height=400&seq=user-2&orientation=squarish',
+    isActive: false,
+    lastLogin: new Date().toISOString(),
+    password: 'password123',
+    team: 1
+  },
+  {
+    id: 'U003',
+    email: 'amina@agent.com',
+    firstName: 'Amina',
+    lastName: 'Traoré',
+    role: 'supervisor',
+    avatar: 'https://readdy.ai/api/search-image?query=confident%20african%20female%20team%20leader&width=400&height=400&seq=user-3&orientation=squarish',
+    isActive: true,
+    lastLogin: new Date().toISOString(),
+    password: 'password123',
+    team: 2
+  },
+  {
+    id: 'U004',
+    email: 'jean@agent.com',
+    firstName: 'Jean',
+    lastName: 'Moukouri',
+    role: 'agent',
+    avatar: 'https://readdy.ai/api/search-image?query=smiling%20young%20male%20customer%20support%20agent&width=400&height=400&seq=user-4&orientation=squarish',
+    isActive: true,
+    lastLogin: new Date().toISOString(),
+    password: 'password123',
+    team: 2
+  },
+  {
+    id: 'U005',
+    email: 'sophie@agent.com',
+    firstName: 'Sophie',
+    lastName: 'Kamdem',
+    role: 'agent',
+    avatar: 'https://readdy.ai/api/search-image?query=professional%20female%20smiling%20corporate%20headshot&width=400&height=400&seq=user-5&orientation=squarish',
+    isActive: true,
+    lastLogin: new Date().toISOString(),
+    password: 'password123',
+    team: 3
+  },
+  {
+    id: 'U006',
+    email: 'ibrahim@agent.com',
+    firstName: 'Ibrahim',
+    lastName: 'Diallo',
+    role: 'agent',
+    avatar: 'https://readdy.ai/api/search-image?query=african%20male%20business%20casual%20portrait&width=400&height=400&seq=user-6&orientation=squarish',
+    isActive: false,
+    lastLogin: new Date().toISOString(),
+    password: 'password123',
+    team: 3
+  },
+  {
+    id: 'U007',
+    email: 'claire@agent.com',
+    firstName: 'Claire',
+    lastName: 'Njoya',
+    role: 'agent',
+    avatar: 'https://readdy.ai/api/search-image?query=professional%20female%20call%20center%20operator&width=400&height=400&seq=user-7&orientation=squarish',
+    isActive: true,
+    lastLogin: new Date().toISOString(),
+    password: 'password123',
+    team: 4
+  },
+  {
+    id: 'U008',
+    email: 'samuel@agent.com',
+    firstName: 'Samuel',
+    lastName: 'Okoro',
+    role: 'agent',
+    avatar: 'https://readdy.ai/api/search-image?query=african%20male%20tech%20support%20specialist&width=400&height=400&seq=user-8&orientation=squarish',
+    isActive: true,
+    lastLogin: new Date().toISOString(),
+    password: 'password123',
+    team: 4
+  },
+  {
+    id: 'U009',
+    email: 'lucie@agent.com',
+    firstName: 'Lucie',
+    lastName: 'Abena',
+    role: 'supervisor',
+    avatar: 'https://readdy.ai/api/search-image?query=corporate%20female%20manager%20portrait&width=400&height=400&seq=user-9&orientation=squarish',
+    isActive: false,
+    lastLogin: new Date().toISOString(),
+    password: 'password123',
+    team: 5
+  },
+  {
+    id: 'U010',
+    email: 'kevin@agent.com',
+    firstName: 'Kevin',
+    lastName: 'Nana',
+    role: 'agent',
+    avatar: 'https://readdy.ai/api/search-image?query=confident%20young%20male%20business%20portrait&width=400&height=400&seq=user-10&orientation=squarish',
+    isActive: true,
+    lastLogin: new Date().toISOString(),
+    password: 'password123',
+    team: 5
   }
-
 ]
+

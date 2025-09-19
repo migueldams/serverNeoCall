@@ -1,4 +1,4 @@
-import { createTimeEntry,deleteTimeEntry,updateTimeEntry,findAllTimeEntrys,findByPkTimeEntry,findAllTimeEntry } from "../service/serviceTimeEntry.mjs";
+import { createTimeEntry,deleteTimeEntry,updateTimeEntry,findAllTimeEntrys,findByPkTimeEntry,findAllTimeEntry ,findTimeAllUser} from "../service/serviceTimeEntry.mjs";
 import { auth } from "../auth/auth.mjs";
 
 export default (router)=>{
@@ -9,4 +9,5 @@ export default (router)=>{
     router.get('/api/TimeEntrys',auth,findAllTimeEntrys)
     router.get('/api/TimeEntrys/:id',auth,findByPkTimeEntry)
     router.get('/api/TimeEntry/:id',auth,findAllTimeEntry)
+    router.get('/api/TimeEntryUser/:id', auth ,findTimeAllUser)
 }

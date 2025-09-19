@@ -1,5 +1,6 @@
 
-import  {User,TimeEntry} from '../routes/index.mjs'
+import  {User,TimeEntry ,sequelize} from '../routes/index.mjs'
+import { QueryTypes } from 'sequelize'
 
 export const createTimeEntry = async (req, res) => {
     try {
@@ -50,7 +51,7 @@ export const findByPkTimeEntry = (req, res) => {
     TimeEntry.findByPk(req.params.id).then(
         TimeEntry => {
             const Message = "le user donc id est" + req.params.id + " a bien ete trouver"
-            res.json({ Message, TimeEntry })
+            res.status(200).json({ TimeEntry })
         })
 }
 
@@ -138,3 +139,26 @@ export const findAllTimeEntry = (req, res) => {
         res.status(500).json({ error: error.message });
     }
 } 
+
+export const findTimeAllUser = async (req,res) =>{
+    const user_id = req.params.id;
+    try{
+         const timeUser = await sequelize.query(`
+    SELECT 
+  u.*,
+  t.*
+FROM users u
+LEFT JOIN time_entries t 
+  ON u.id = t.userId
+WHERE u.id = ${user_id}
+LIMIT 1;
+
+  `,
+    { type: QueryTypes.SELECT });
+        res.status(200).json(timeUser)
+
+    }catch(error){
+        console.log(error)
+         res.status(500).json({ error: error.message });
+    }
+}

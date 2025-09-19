@@ -4,8 +4,9 @@ import { mockcUser } from "../mockdata/mockUser.mjs";
 import { mockStocks } from "../mockdata/mockStock.mjs";
 import { mockNotes } from "../mockdata/mockNotes.mjs";
 import { mockCandidates } from "../mockdata/mockCandidate.mjs";
+import { mocksteam } from "../mockdata/mockTeam.mjs";
 import { User } from '../routes/index.mjs'
-import { Stock, Note, Candidate, TimeEntry } from "../routes/index.mjs";
+import { Stock, Note, Candidate, TimeEntry, Team } from "../routes/index.mjs";
 import bcrypt, { hash } from 'bcrypt'
 
 //⚙ synchronisation de la db
@@ -35,7 +36,13 @@ export default () => {
 
   sequelize.sync({ force: true }).then(async () => {
 
-
+    mocksteam.map(data => {
+      Team.create({
+        name: data.name,
+        campaing: data.campaing,
+        avatar: data.avatar
+      })
+    })
     const users = await Promise.all(
       mockcUser.map(data =>
         bcrypt.hash(data.password, 10).then(hash =>
@@ -44,6 +51,7 @@ export default () => {
             email: data.email,
             firstName: data.firstName,
             lastName: data.lastName,
+            team: data.team,
             role: data.role,
             avatar: data.avatar,
             isActive: data.isActive,
@@ -96,16 +104,11 @@ export default () => {
     })
 
 
-
-
-
-
-
     console.log('base de donnée synchronisée')
   })
 
 
-  
+
   return sequelize
 }
 

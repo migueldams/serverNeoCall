@@ -16,6 +16,8 @@ import routesCandidate from "./routesCandidate.mjs";
 import modelTimeEntry from "../models/modelTimeEntry.mjs";
 import routeTimeEntry from "./routeTimeEntry.mjs";
 import routesAssistantAI from "./routesAssistantAI.mjs";
+import modelsTeam from "../models/modelsTeam.mjs";
+import routesTeam from "./routesTeam.mjs";
 
     // declaration de le methode route du server
     const router = express.Router()
@@ -26,14 +28,15 @@ import routesAssistantAI from "./routesAssistantAI.mjs";
     export const sequelize = initdb()
 
 
-    //appel du models users par sequelise
+    //appel du models users par sequelise 
+    export const Team = modelsTeam(sequelize,DataTypes)
     export const User = modelsUser(sequelize,DataTypes)
     export const Call = modelsCall(sequelize,DataTypes)
     export const Stock = modelsStock(sequelize,DataTypes) 
     export const Note = modelsNotes(sequelize,DataTypes)
     export const Candidate = modelsCandidate(sequelize,DataTypes)
     export const TimeEntry = modelTimeEntry(sequelize,DataTypes)
-
+   
 
     login(router)
     // appel des routes de users
@@ -45,5 +48,6 @@ import routesAssistantAI from "./routesAssistantAI.mjs";
     routesCandidate(router)
     routeTimeEntry(router)
     routesAssistantAI(router)
+    routesTeam(router)
 
 export default router

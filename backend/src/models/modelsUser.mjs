@@ -6,7 +6,15 @@ export default (sequelize,DataTypes) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
-    },
+    },team: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: "teams",   // nom de la table parent
+        key: "id"
+      },
+      onDelete: "SET NULL",  // si l'équipe est supprimée, le champ passe à NULL
+      onUpdate: "CASCADE",},
     password: { type: DataTypes.STRING, allowNull: false ,valite:{isColString:{msg:"entrer une champs valide"},notNull:{msg:"le nom ne peux pas etre null"}}},
     email: {
       type: DataTypes.STRING,
@@ -20,7 +28,7 @@ export default (sequelize,DataTypes) => {
       allowNull: false,
     },status_activite: {
       type: DataTypes.ENUM('active', 'inactive', 'suspended'),
-      defaultValue: 'active'
+      defaultValue: 'inactive'
     },
     avatar: DataTypes.STRING,
     isActive: {
@@ -44,7 +52,7 @@ export default (sequelize,DataTypes) => {
     User.hasMany(models.Notification, { foreignKey: 'userId', onDelete: 'CASCADE' });
     User.hasMany(models.ComplianceDocument, { foreignKey: 'userId', onDelete: 'CASCADE' });
     User.belongsTo(models.LeaveRequest, { foreignKey: 'userId' , onDelete: 'CASCADE'});
-
+    User.belongsTo(models.Team, { foreignKey: 'team' , onDelete: 'CASCADE'});
  
     };
 

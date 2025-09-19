@@ -2,8 +2,9 @@
 export default (sequelize, DataTypes) => {
   const Stock = sequelize.define('Stock', {
     id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       primaryKey: true,
+      autoIncrement: true
 
     },
     name: {

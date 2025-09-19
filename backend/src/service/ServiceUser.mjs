@@ -84,7 +84,7 @@ export const findAllUser =  (req, res) => {
         }
 
        
-    }
+}
 
 // api de modification de users
 export const updateUser =  (req, res) => {
@@ -105,4 +105,4 @@ export const updateUser =  (req, res) => {
         }
 
 
-    }
+}
